@@ -152,8 +152,10 @@
   .stores{text-align:center;margin-top:30px}
   .stores .st-title{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--label);font-weight:600}
   .stores .st-row{display:flex;justify-content:center;gap:11px;margin-top:12px;flex-wrap:wrap}
-  .stores .st{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid #fff;box-shadow:0 8px 16px -10px rgba(20,40,32,.5)}
-  .stores .st svg{width:100%;height:100%;display:block}
+  .stores .st{width:100px;height:46px;padding:0 12px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 16px -10px rgba(20,40,32,.5)}
+  .stores .st img{height:24px;width:auto;max-width:100%;display:block}
+  .stores .st img.tall{height:32px}
+  .stores .st img.low{height:17px}
 
   /* ---------- PROJETO MRN ---------- */
   .project{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;margin:30px auto 0;max-width:300px;padding:16px 20px 15px;background:rgba(253,251,247,.7);border:1px solid rgba(255,255,255,.7);border-radius:24px;text-decoration:none;color:var(--ink);box-shadow:0 12px 22px -16px rgba(20,40,32,.45);transition:transform .16s ease}
@@ -259,11 +261,11 @@
   <div class="stores">
     <div class="st-title">Garimpamos nas maiores lojas</div>
     <div class="st-row">
-      <span class="st" title="Shopee"><svg viewBox="0 0 48 48" role="img" aria-label="Shopee"><rect width="48" height="48" fill="#EE4D2D"/><path d="M15.5 19h17l-1.5 15.5a2 2 0 0 1-2 1.8h-10a2 2 0 0 1-2-1.8z" fill="#fff"/><path d="M19.8 19v-1.4a4.2 4.2 0 0 1 8.4 0V19" fill="none" stroke="#fff" stroke-width="2.2"/><text x="24" y="32.3" text-anchor="middle" font-family="Poppins,Arial" font-weight="600" font-size="10" fill="#EE4D2D">S</text></svg></span>
-      <span class="st" title="Mercado Livre"><svg viewBox="0 0 48 48" role="img" aria-label="Mercado Livre"><rect width="48" height="48" fill="#FFE600"/><ellipse cx="24" cy="24" rx="14" ry="9.5" fill="#fff" stroke="#2D3277" stroke-width="2"/><path d="M14.5 24.5l4.8-3 3.8 2.3 3-1.9 4 2.7 3.4-1.5" fill="none" stroke="#2D3277" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <span class="st" title="Amazon"><svg viewBox="0 0 48 48" role="img" aria-label="Amazon"><rect width="48" height="48" fill="#232F3E"/><text x="24" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="20" fill="#fff">a</text><path d="M14 31c5.6 3.6 14.4 3.6 20 0" fill="none" stroke="#FF9900" stroke-width="2.4" stroke-linecap="round"/><path d="M31.2 28.8l3 2.2-.9 3.4" fill="none" stroke="#FF9900" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <span class="st" title="Magazine Luiza"><svg viewBox="0 0 48 48" role="img" aria-label="Magazine Luiza"><rect width="48" height="48" fill="#0086FF"/><text x="24" y="28" text-anchor="middle" font-family="Poppins,Arial" font-weight="600" font-size="10.5" fill="#fff">magalu</text><rect x="11" y="32" width="5.2" height="2.6" fill="#F7C844"/><rect x="16.2" y="32" width="5.2" height="2.6" fill="#FF6E2F"/><rect x="21.4" y="32" width="5.2" height="2.6" fill="#E5215F"/><rect x="26.6" y="32" width="5.2" height="2.6" fill="#A934A8"/><rect x="31.8" y="32" width="5.2" height="2.6" fill="#5EC9F4"/></svg></span>
-      <span class="st" title="Natura"><svg viewBox="0 0 48 48" role="img" aria-label="Natura"><rect width="48" height="48" fill="#F4F1EA"/><circle cx="24" cy="19.5" r="6.5" fill="none" stroke="#F28B1D" stroke-width="2.2"/><path d="M24 13v13M17.5 19.5h13" stroke="#F28B1D" stroke-width="1.4"/><text x="24" y="36.5" text-anchor="middle" font-family="Poppins,Arial" font-weight="600" font-size="8.5" fill="#3D2B1F">natura</text></svg></span>
+      <span class="st"><img src="assets/lojas/shopee.svg" alt="Shopee" class="tall"></span>
+      <span class="st"><img src="assets/lojas/ml.svg" alt="Mercado Livre"></span>
+      <span class="st"><img src="assets/lojas/amazon.svg" alt="Amazon" class="tall"></span>
+      <span class="st"><img src="assets/lojas/magalu.svg" alt="Magalu"></span>
+      <span class="st"><img src="assets/lojas/natura.svg" alt="Natura" class="low"></span>
     </div>
   </div>
 

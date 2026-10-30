@@ -15,7 +15,8 @@
   /* Mesmo padrão da bio do Manual, cores trocadas: fundo verde menta suave (o "as ofertas" da logo)
      com toques de rosa (o "maternas") e dourado (bico da cegonha) */
   :root{
-    --bg1:#F1F8F3; --bg2:#E4F1E9; --bg3:#F6E3EC;
+    --bg1:#D3E7DB; --bg2:#BFDACB; --bg3:#E3C3D3;
+    --label:#2F6B57;
     --card:#FDFBF7; --ink:#2E3A35; --ink-soft:#66756D; --line:#E3ECE6;
     --pine:#24493E; --rose:#B4517F; --gold:#D9A94E;
   }
@@ -78,9 +79,11 @@
   @keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-7px,6px) scale(1.05)}}
   @keyframes tw{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.25);opacity:1}}
 
-  .profile .tag{font-size:.98rem;color:#4F6158;max-width:400px;margin:6px auto 0;text-wrap:balance}
+  .profile .tag{font-size:.98rem;color:#4F6158;max-width:400px;margin:8px auto 0;text-wrap:balance;
+    background:rgba(253,251,247,.82);border:1px solid rgba(255,255,255,.85);border-radius:24px;padding:16px 18px 17px;
+    box-shadow:0 14px 28px -18px rgba(20,50,38,.5)}
   .profile .tag strong{display:block;font-family:'Fraunces',serif;font-weight:600;font-size:1.6rem;line-height:1.15;color:var(--rose);margin:2px 0 4px}
-  .pickhint{margin:22px 0 2px;text-align:center;font-size:.72rem;letter-spacing:2.4px;text-transform:uppercase;color:#4E8C76;font-weight:600}
+  .pickhint{margin:22px 0 2px;text-align:center;font-size:.72rem;letter-spacing:2.4px;text-transform:uppercase;color:var(--label);font-weight:600}
 
   /* ---------- DESTAQUE: GRUPO ---------- */
   .feature{
@@ -108,7 +111,7 @@
   .rows{margin-top:14px}
   .row{
     display:flex;align-items:center;gap:15px;width:100%;
-    background:var(--card);border:1px solid rgba(255,255,255,.6);border-radius:18px;
+    background:var(--rbg,var(--card));border:1px solid rgba(255,255,255,.7);border-radius:18px;
     padding:11px 15px 11px 12px;margin-bottom:11px;text-decoration:none;color:var(--ink);
     box-shadow:0 12px 22px -15px rgba(20,40,32,.45);transition:transform .16s ease, box-shadow .16s ease;
   }
@@ -138,15 +141,16 @@
   .row .chev svg{width:15px;height:15px;stroke:var(--acc-dk);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
   .row:hover .chev{transform:translateX(3px)}
 
-  .r-canal   {--acc:#BFE6D4;--acc-dk:#2E8A6A;--halo:#E2F3EA}
-  .r-tg      {--acc:#C7E3F5;--acc-dk:#2B86BE;--halo:#E3F1FA}
-  .r-fraldas {--acc:#F4CADB;--acc-dk:#B4517F;--halo:#FBE7EF}
+  /* cada botão com fundo na sua cor, bem clarinho */
+  .r-canal   {--acc:#9FD9BF;--acc-dk:#25785C;--halo:#fff;--rbg:linear-gradient(135deg,#E9F8F0,#D2F0E1)}
+  .r-tg      {--acc:#A9D5F2;--acc-dk:#1F77AE;--halo:#fff;--rbg:linear-gradient(135deg,#EAF5FD,#D3EAFA)}
+  .r-fraldas {--acc:#EFB5CD;--acc-dk:#A8436F;--halo:#fff;--rbg:linear-gradient(135deg,#FDF0F5,#F8DCE8)}
 
-  .sechint{margin:24px 0 12px;text-align:center;font-size:.72rem;letter-spacing:2.4px;text-transform:uppercase;color:#4E8C76;font-weight:600}
+  .sechint{margin:24px 0 12px;text-align:center;font-size:.72rem;letter-spacing:2.4px;text-transform:uppercase;color:var(--label);font-weight:600}
 
   /* ---------- LOJAS ---------- */
   .stores{text-align:center;margin-top:30px}
-  .stores .st-title{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:#4E8C76;font-weight:600}
+  .stores .st-title{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--label);font-weight:600}
   .stores .st-row{display:flex;justify-content:center;gap:11px;margin-top:12px;flex-wrap:wrap}
   .stores .st{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid #fff;box-shadow:0 8px 16px -10px rgba(20,40,32,.5)}
   .stores .st svg{width:100%;height:100%;display:block}
@@ -286,7 +290,7 @@
       <a href="https://youtube.com/manualdorecemnascido" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
       <a href="https://tiktok.com/@manualdorecemnascido" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="#010101"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.01-2.82h-3.09v12.4a2.43 2.43 0 1 1-2.43-2.43c.25 0 .5.04.74.12V9.96a5.54 5.54 0 0 0-.74-.05 5.52 5.52 0 1 0 5.52 5.52V9.13a7.34 7.34 0 0 0 4.3 1.38V7.42a4.28 4.28 0 0 1-3.29-1.6z"/></svg></a>
     </div>
-    <div class="cp">© As Ofertas Maternas · Manual do Recém-Nascido<br>Como afiliadas, podemos receber comissão pelas compras, sem custo extra pra você.</div>
+    <div class="cp">© As Ofertas Maternas · Manual do Recém-Nascido</div>
   </footer>
 
 </div>

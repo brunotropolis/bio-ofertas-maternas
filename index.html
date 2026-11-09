@@ -193,10 +193,22 @@
   .bf-s{font-size:.84rem;color:rgba(255,255,255,.75);margin-top:7px}
   @keyframes bf-b{0%{left:-60%}60%,100%{left:130%}}
   @media (prefers-reduced-motion: reduce){.bf-tag:after{animation:none}}
+
+  /* 08/11: hero menor pra o canal aparecer na 1ª dobra + botão voltar pra bio do Manual */
+  .wrap{padding-top:14px}
+  .hero{transform:scale(.62);transform-origin:50% 0;margin-bottom:-80px}
+  .voltar{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:500;color:var(--pine);text-decoration:none;
+    background:rgba(253,251,247,.8);border:1px solid rgba(255,255,255,.85);border-radius:999px;padding:7px 13px 7px 10px;box-shadow:0 8px 16px -12px rgba(20,40,32,.5)}
+  .voltar svg{width:14px;height:14px}
+  .bf-tag{padding:14px 16px 15px}
+  .bf-t{font-size:1.3rem}
+  .pickhint{margin-top:16px}
 </style>
 </head>
 <body>
 <div class="wrap">
+
+  <a class="voltar" href="https://bio.manualdorecemnascido.com.br/?utm_source=bio-ofertas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>Voltar para o Manual</a>
 
   <!-- PERFIL -->
   <header class="profile">

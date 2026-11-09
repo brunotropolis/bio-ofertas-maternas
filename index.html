@@ -197,18 +197,19 @@
   /* 08/11: hero menor pra o canal aparecer na 1ª dobra + botão voltar pra bio do Manual */
   .wrap{padding-top:14px}
   .hero{transform:scale(.62);transform-origin:50% 0;margin-bottom:-80px}
-  .voltar{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:500;color:var(--pine);text-decoration:none;
-    background:rgba(253,251,247,.8);border:1px solid rgba(255,255,255,.85);border-radius:999px;padding:7px 13px 7px 10px;box-shadow:0 8px 16px -12px rgba(20,40,32,.5)}
-  .voltar svg{width:14px;height:14px}
+  .voltar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:center;gap:7px;
+    padding:12px 16px calc(12px);padding-top:max(12px, env(safe-area-inset-top, 0px));font-size:.84rem;font-weight:600;color:#fff;text-decoration:none;
+    background:linear-gradient(90deg,#C25A8A,#D46E9C 50%,#C25A8A);box-shadow:0 6px 16px -8px rgba(150,50,95,.55)}
+  .voltar svg{width:16px;height:16px}
   .bf-tag{padding:14px 16px 15px}
   .bf-t{font-size:1.3rem}
   .pickhint{margin-top:16px}
 </style>
 </head>
 <body>
+<a class="voltar" href="https://bio.manualdorecemnascido.com.br/?utm_source=bio-ofertas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>Voltar para o Manual do Recém-Nascido</a>
 <div class="wrap">
 
-  <a class="voltar" href="https://bio.manualdorecemnascido.com.br/?utm_source=bio-ofertas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>Voltar para o Manual</a>
 
   <!-- PERFIL -->
   <header class="profile">
@@ -291,7 +292,7 @@
       <span class="st"><img src="assets/lojas/ml.svg" alt="Mercado Livre"></span>
       <span class="st"><img src="assets/lojas/amazon.svg" alt="Amazon" class="tall"></span>
       <span class="st"><img src="assets/lojas/magalu.svg" alt="Magalu"></span>
-      <span class="st"><img src="assets/lojas/natura.svg" alt="Natura" class="low"></span>
+      <span class="st"><img src="assets/lojas/natura.png" alt="Natura" class="low"></span>
     </div>
   </div>
 

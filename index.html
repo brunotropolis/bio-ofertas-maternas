@@ -324,5 +324,8 @@
 
 </div>
 
+<script>/* 08/11: repassa a origem de quem chegou (utm_source/utm_medium vindos da bio, TikTok, YouTube, Facebook) pro grupo e pro Busca Fraldas */
+(function(){try{var q=new URLSearchParams(location.search),s=q.get("utm_source"),m=q.get("utm_medium");if(!s)return;
+document.querySelectorAll("a.feature,a.r-fraldas").forEach(function(a){var u=new URL(a.href);u.searchParams.set("utm_source",s);if(m)u.searchParams.set("utm_medium",m);a.href=u.toString();});}catch(e){}})();</script>
 </body>
 </html>

@@ -74,7 +74,7 @@
   .loja[aria-pressed="true"],.cat[aria-pressed="true"]{border-color:var(--rose);background:var(--rose-soft);color:#8E3561}
   .cats{margin-top:10px}
   .cat{flex:none;height:34px;padding:0 13px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-size:.78rem;font-weight:500;white-space:nowrap}
-  .busca{margin:10px 14px 2px;position:relative}
+  .busca{display:block;margin:10px 14px 2px;position:relative}
   .busca input{width:100%;height:42px;border-radius:12px;border:1.5px solid var(--line);background:#fff;padding:0 12px 0 38px;font:inherit;font-size:16px;color:var(--ink);outline:none}
   .busca input:focus{border-color:var(--pine2)}
   .busca svg{position:absolute;left:12px;top:12px;width:18px;height:18px;color:var(--ink-soft)}
@@ -158,7 +158,7 @@
 
 <div class="topo"><div class="in">
   <a class="vt" href="../" aria-label="Voltar pro link da bio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></a>
-  <p>Receba as promoções no seu WhatsApp</p>
+  <p>Receba as ofertas no WhatsApp</p>
   <a class="zap" href="https://asofertasmaternas.com.br/?utm_source=instagram&utm_campaign=organico&utm_content=promocoes-do-dia"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.7.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>Entrar no grupo</a>
 </div></div>
 
@@ -361,7 +361,7 @@ function abre(it) {
     <div class="qd">Postado ${ha(it.em)} · ${quando}${it.prime ? " · Exclusivo Prime" : ""}</div>
     <h4>${esc(it.titulo)}</h4>
     ${it.tipo === "cupom" ? `<div class="eco" style="font-size:1rem">${esc((it.regra || "").replace(/^[^\p{L}\p{N}R$]+/u, ""))}</div>` :
-      `${it.de && it.de > it.preco ? `<div class="de">${brl(it.de)}</div>` : ""}<div class="por">${brl(it.preco)}</div>${eco ? `<div class="eco">${eco}</div>` : ""}${it.unidade ? `<div class="uni">${esc(it.unidade)} por unidade</div>` : ""}`}
+      `${it.de && it.de > it.preco ? `<div class="de">${brl(it.de)}</div>` : ""}<div class="por">${brl(it.preco)}</div>${eco ? `<div class="eco">${eco}</div>` : ""}${it.unidade ? `<div class="uni">R$ ${esc(String(it.unidade).replace(".",","))} por unidade</div>` : ""}`}
     ${it.cupom ? `<div class="cupom"><div><small>Use o cupom</small><b>${esc(it.cupom)}</b></div><button data-copia="${esc(it.cupom)}">Copiar</button></div>` : ""}
     <a class="pegar" href="${esc(it.link)}" target="_blank" rel="noopener sponsored">${it.tipo === "cupom" ? "Ir pra loja" : "Pegar promoção"} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
     <p class="aviso">Preço e estoque podem mudar a qualquer momento.</p>
@@ -394,7 +394,7 @@ async function carrega() {
     const j = await r.json();
     geradoEm = j.gerado_em;
     ITENS = (j.itens || []).filter((it) => it.link && it.titulo && (it.tipo === "cupom" || it.preco)).map((it, i) => ({ ...it, _i: i }));
-    ITENS.forEach((it) => (it.cat = categoria(it)));
+    ITENS.forEach((it) => { if (!it.loja) it.loja = /natura.com/.test(it.link) ? "natura" : /amazon./.test(it.link) ? "amazon" : /shopee./.test(it.link) ? "shopee" : /meli.la|mercadolivre/.test(it.link) ? "ml" : /magazinevoce|magalu/.test(it.link) ? "magalu" : null; it.cat = categoria(it); });
     $("atual").innerHTML = ITENS.length ? `Atualiza sozinho · última postada <b>${ha(ITENS[0].em)}</b>` : "Sem ofertas agora";
     tudo();
   } catch (e) {

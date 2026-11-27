@@ -105,7 +105,7 @@
   .card .por{font-size:1.22rem;font-weight:700;color:var(--pine);letter-spacing:-.01em}
   .card .ver{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:9px;height:36px;border-radius:11px;background:var(--pine);color:#fff;font-weight:600;font-size:.8rem}
   .card .ver.cpn{background:var(--rose)}
-  .card .regra{font-size:.8rem;font-weight:600;color:var(--pine2);line-height:1.25}
+  .card .regra{font-size:.8rem;font-weight:600;color:var(--pine2);line-height:1.25;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
   .cta{grid-column:1/-1;background:linear-gradient(140deg,var(--pine),#2F6B57);color:#fff;border-radius:20px;padding:18px 16px;text-align:center}
   .cta b{display:block;font-family:'Fraunces',serif;font-size:1.25rem;margin-bottom:4px}
@@ -286,7 +286,7 @@ function off(it) {
 
 function filtrados(ignorar) {
   const q = sem(st.q).trim();
-  let l = ITENS.filter((it) => st.camp === "todas" || it.campanha === st.camp);
+  let l = ITENS.filter((it) => st.camp === "todas" ? it.tipo !== "cupom" : it.campanha === st.camp);
   if (st.camp === "todas") { const vistos = new Set(); l = l.filter((it) => { const k = sem(it.titulo).slice(0, 60) + it.loja; if (vistos.has(k)) return false; vistos.add(k); return true; }); }
   if (ignorar !== "loja" && st.loja) l = l.filter((it) => it.loja === st.loja);
   if (ignorar !== "cat" && st.cat) l = l.filter((it) => it.cat === st.cat);

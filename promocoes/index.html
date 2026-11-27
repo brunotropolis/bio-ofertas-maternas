@@ -18,7 +18,7 @@
 <style>
   :root{
     --bg1:#D3E7DB; --bg2:#C7E0D2; --bg3:#E9CFDC;
-    --card:#FFFFFF; --soft:#FDFBF7; --ink:#24302B; --ink-soft:#66756D; --line:#E3ECE6;
+    --card:#FFFFFF; --soft:#FDFBF7; --ink:#24302B; --ink-soft:#4F5E57; --line:#E3ECE6;
     --pine:#24493E; --pine2:#2F6B57; --rose:#B4517F; --rose-soft:#F7E3EC; --gold:#D9A94E; --zap:#1FA855;
   }
   :root{color-scheme:light}
@@ -42,11 +42,11 @@
     box-shadow:0 6px 14px -6px rgba(0,0,0,.4)}
   .topo .zap svg{width:17px;height:17px}
 
-  .wrap{max-width:760px;margin:0 auto;padding:18px max(14px,env(safe-area-inset-right)) 40px max(14px,env(safe-area-inset-left))}
+  .wrap{max-width:760px;margin:0 auto;padding:12px max(14px,env(safe-area-inset-right)) 40px max(14px,env(safe-area-inset-left))}
 
-  .cab{display:flex;align-items:center;gap:13px;margin:4px 2px 16px}
-  .cab img{width:58px;height:58px;border-radius:50%;border:3px solid #fff;box-shadow:0 10px 20px -12px rgba(36,73,62,.6);object-fit:cover;flex:none}
-  .cab h1{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;line-height:1.05;color:var(--pine)}
+  .cab{display:flex;align-items:center;gap:11px;margin:2px 2px 12px}
+  .cab img{width:46px;height:46px;border-radius:50%;border:3px solid #fff;box-shadow:0 10px 20px -12px rgba(36,73,62,.6);object-fit:cover;flex:none}
+  .cab h1{font-family:'Fraunces',serif;font-weight:700;font-size:1.45rem;line-height:1.05;color:var(--pine)}
   .cab h1 em{font-style:normal;color:var(--rose)}
   .cab .sub{font-size:.8rem;color:var(--ink-soft);margin-top:3px}
   .cab .sub b{color:var(--pine2);font-weight:600}
@@ -64,22 +64,21 @@
   .camp[aria-pressed="true"] .ic{background:rgba(255,255,255,.16)}
   .camp[aria-pressed="true"] .n{color:rgba(255,255,255,.75)}
 
-  .bloco{background:rgba(253,251,247,.86);border:1px solid rgba(255,255,255,.9);border-radius:20px;padding:12px 0 10px;margin-top:12px;
-    box-shadow:0 14px 28px -22px rgba(20,50,38,.6)}
+  .bloco{margin:10px -14px 0;padding:0}
   .bloco h2{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pine2);font-weight:600;padding:0 14px 8px}
   .lojas,.cats{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:0 14px;overscroll-behavior-x:contain}
-  .loja{flex:none;display:flex;align-items:center;gap:8px;height:44px;padding:0 13px;border-radius:13px;background:#fff;border:1.5px solid var(--line);font-size:.8rem;font-weight:500}
+  .loja{flex:none;display:flex;align-items:center;gap:7px;height:38px;padding:0 13px;border-radius:13px;background:#fff;border:1.5px solid var(--line);font-size:.8rem;font-weight:500}
   .loja img{height:20px;width:auto;max-width:74px;object-fit:contain}
   .loja .t{white-space:nowrap}
   .loja[aria-pressed="true"],.cat[aria-pressed="true"]{border-color:var(--rose);background:var(--rose-soft);color:#8E3561}
-  .cats{margin-top:10px}
-  .cat{flex:none;height:34px;padding:0 13px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-size:.78rem;font-weight:500;white-space:nowrap}
-  .busca{display:block;margin:10px 14px 2px;position:relative}
-  .busca input{width:100%;height:42px;border-radius:12px;border:1.5px solid var(--line);background:#fff;padding:0 12px 0 38px;font:inherit;font-size:16px;color:var(--ink);outline:none}
+  .cats{margin-top:8px}
+  .cat{flex:none;height:32px;padding:0 13px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-size:.78rem;font-weight:500;white-space:nowrap}
+  .busca{display:block;margin:8px 14px 0;position:relative}
+  .busca input{width:100%;height:38px;border-radius:12px;border:1.5px solid var(--line);background:#fff;padding:0 12px 0 38px;font:inherit;font-size:16px;color:var(--ink);outline:none}
   .busca input:focus{border-color:var(--pine2)}
-  .busca svg{position:absolute;left:12px;top:12px;width:18px;height:18px;color:var(--ink-soft)}
+  .busca svg{position:absolute;left:12px;top:10px;width:18px;height:18px;color:var(--ink-soft)}
 
-  .tit{display:flex;align-items:baseline;justify-content:space-between;margin:20px 2px 10px}
+  .tit{display:flex;align-items:baseline;justify-content:space-between;margin:14px 2px 8px}
   .tit h3{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--pine);font-weight:700}
   .tit span{font-size:.76rem;color:var(--ink-soft)}
 
@@ -103,7 +102,9 @@
     max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .card .pr{margin-top:auto;padding-top:4px}
   .card .de{font-size:.72rem;color:var(--ink-soft);text-decoration:line-through}
-  .card .por{font-size:1.12rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+  .card .por{font-size:1.22rem;font-weight:700;color:var(--pine);letter-spacing:-.01em}
+  .card .ver{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:9px;height:36px;border-radius:11px;background:var(--pine);color:#fff;font-weight:600;font-size:.8rem}
+  .card .ver.cpn{background:var(--rose)}
   .card .regra{font-size:.8rem;font-weight:600;color:var(--pine2);line-height:1.25}
 
   .cta{grid-column:1/-1;background:linear-gradient(140deg,var(--pine),#2F6B57);color:#fff;border-radius:20px;padding:18px 16px;text-align:center}
@@ -135,16 +136,16 @@
   .gav .ft{aspect-ratio:1/1;max-height:300px;margin:12px auto;display:grid;place-items:center;width:100%}
   .gav .ft img{max-width:100%;max-height:300px;object-fit:contain}
   .gav .qd{font-size:.74rem;color:var(--ink-soft)}
-  .gav h4{font-size:1.02rem;font-weight:600;line-height:1.32;margin:4px 0 10px}
+  .gav h4{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:600;line-height:1.3;margin:2px 0 10px;color:var(--pine)}
   .gav .de{font-size:.86rem;color:var(--ink-soft);text-decoration:line-through}
   .gav .por{font-size:1.9rem;font-weight:700;letter-spacing:-.02em;line-height:1.1}
   .gav .eco{font-size:.8rem;font-weight:600;color:#1C8A4C;margin-top:2px}
-  .gav .uni{font-size:.8rem;color:var(--ink-soft)}
+  .gav .uni{display:inline-block;margin-top:8px;font-size:.82rem;font-weight:600;color:#6B4C10;background:#FBF1DC;border:1px solid #EBCB86;border-radius:999px;padding:4px 11px}
   .gav .cupom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;border:1.5px dashed #E2A9C3;background:var(--rose-soft);border-radius:14px;padding:10px 12px}
   .gav .cupom small{display:block;font-size:.7rem;color:#8E3561}
   .gav .cupom b{font-size:1.02rem;letter-spacing:.04em;color:#6E2148;word-break:break-all}
   .gav .cupom button{flex:none;background:var(--rose);color:#fff;border-radius:10px;padding:8px 12px;font-weight:600;font-size:.8rem}
-  .gav .pegar{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;background:var(--pine);color:#fff;border-radius:16px;height:54px;font-weight:600;font-size:1rem;
+  .gav .pegar{position:sticky;bottom:calc(8px + env(safe-area-inset-bottom));z-index:2;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;background:var(--pine);color:#fff;border-radius:16px;height:54px;font-weight:600;font-size:1rem;
     box-shadow:0 12px 22px -14px rgba(36,73,62,.9)}
   .gav .pegar:active{transform:scale(.98)}
   .gav .aviso{text-align:center;font-size:.7rem;color:var(--ink-soft);margin-top:10px}
@@ -164,7 +165,7 @@
 
 <main class="wrap">
   <header class="cab">
-    <img src="https://brunotropolis.github.io/bio-ofertas-maternas/assets/logo.jpg" alt="As Ofertas Maternas" width="58" height="58">
+    <img src="https://brunotropolis.github.io/bio-ofertas-maternas/assets/logo.jpg" alt="As Ofertas Maternas" width="46" height="46">
     <div>
       <h1>Promoções <em>do dia</em></h1>
       <p class="sub"><span class="vivo"></span><span id="atual">Carregando as últimas ofertas…</span></p>
@@ -174,7 +175,7 @@
   <nav class="camps" id="camps" aria-label="Campanhas"></nav>
 
   <section class="bloco">
-    <h2>Filtrar por loja</h2>
+    
     <div class="lojas" id="lojas"></div>
     <div class="cats" id="cats" aria-label="Categorias"></div>
     <label class="busca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
@@ -320,16 +321,16 @@ const ordTam = (s) => TAM.indexOf(s.replace("Tamanho ", ""));
 function cardHtml(it, i) {
   const lj = LOJAS[it.loja];
   const o = off(it);
-  const nome = it.titulo;
+  const nome = it.tituloBom;
   const foto = it.foto ? `<img src="${esc(it.foto)}" alt="" loading="${i < 6 ? "eager" : "lazy"}" decoding="async" referrerpolicy="no-referrer">` : "";
   if (it.tipo === "cupom") {
     return `<button class="card" data-i="${it._i}"><div class="foto">${foto}${lj ? `<span class="lg"><img src="${lj.logo}" alt="${lj.nome}"></span>` : ""}<span class="cp">CUPOM</span></div>
       <div class="txt"><span class="q">${ha(it.em)}</span><span class="nm">${esc(nome)}</span>${it.cupom ? `<span class="cod">${esc(it.cupom)}</span>` : ""}
-      <div class="pr"><span class="regra">${esc((it.regra || "").replace(/^[^\p{L}\p{N}R$]+/u, ""))}</span></div></div></button>`;
+      <div class="pr"><span class="regra">${esc((it.regra || "").replace(/^[^\p{L}\p{N}R$]+/u, ""))}</span></div><span class="ver cpn">Pegar cupom</span></div></button>`;
   }
   return `<button class="card" data-i="${it._i}"><div class="foto">${foto}${o ? `<span class="off">-${o}%</span>` : ""}${lj ? `<span class="lg"><img src="${lj.logo}" alt="${lj.nome}"></span>` : ""}</div>
     <div class="txt"><span class="q">${ha(it.em)}</span><span class="nm">${esc(nome)}</span>${it.cupom ? `<span class="cod">🏷️ ${esc(it.cupom)}</span>` : ""}
-    <div class="pr">${it.de && it.de > it.preco ? `<div class="de">${brl(it.de)}</div>` : ""}<div class="por">${brl(it.preco)}</div></div></div></button>`;
+    <div class="pr">${it.de && it.de > it.preco ? `<div class="de">${brl(it.de)}</div>` : ""}<div class="por">${brl(it.preco)}</div></div><span class="ver">Ver oferta</span></div></button>`;
 }
 const CTA = `<div class="cta"><b>Já está no nosso grupo?</b><p>É grátis! Receba no WhatsApp as melhores ofertas assim que a gente encontra.</p>
   <div class="bts"><a class="z" href="${GRUPO}">Entrar no grupo</a><a href="${CANAL}" target="_blank" rel="noopener">Canal</a><a href="${TELEGRAM}" target="_blank" rel="noopener">Telegram</a></div></div>`;
@@ -358,13 +359,12 @@ function abre(it) {
   $("gav").innerHTML = `<div class="puxa"></div><button class="fecha" aria-label="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <div class="lj">${lj ? `<img src="${lj.logo}" alt="">` : ""}<div>${it.tipo === "cupom" ? "Cupom da loja" : "Promoção da loja"}<b>${lj ? lj.nome : "Loja parceira"}</b></div></div>
     ${it.foto ? `<div class="ft"><img src="${esc(it.foto)}" alt="" referrerpolicy="no-referrer"></div>` : ""}
-    <div class="qd">Postado ${ha(it.em)} · ${quando}${it.prime ? " · Exclusivo Prime" : ""}</div>
-    <h4>${esc(it.titulo)}</h4>
+    <h4>${esc(it.tituloBom)}</h4>
     ${it.tipo === "cupom" ? `<div class="eco" style="font-size:1rem">${esc((it.regra || "").replace(/^[^\p{L}\p{N}R$]+/u, ""))}</div>` :
-      `${it.de && it.de > it.preco ? `<div class="de">${brl(it.de)}</div>` : ""}<div class="por">${brl(it.preco)}</div>${eco ? `<div class="eco">${eco}</div>` : ""}${it.unidade ? `<div class="uni">R$ ${esc(String(it.unidade).replace(".",","))} por unidade</div>` : ""}`}
+      `${it.de && it.de > it.preco ? `<div class="de">${brl(it.de)}</div>` : ""}<div class="por">${brl(it.preco)}</div>${eco ? `<div class="eco">${eco}</div>` : ""}${it.unidade ? `<div class="uni">Sai R$ ${esc(String(it.unidade).replace(".",","))} por unidade</div>` : ""}`}
     ${it.cupom ? `<div class="cupom"><div><small>Use o cupom</small><b>${esc(it.cupom)}</b></div><button data-copia="${esc(it.cupom)}">Copiar</button></div>` : ""}
     <a class="pegar" href="${esc(it.link)}" target="_blank" rel="noopener sponsored">${it.tipo === "cupom" ? "Ir pra loja" : "Pegar promoção"} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
-    <p class="aviso">Preço e estoque podem mudar a qualquer momento.</p>
+    <p class="aviso">Postado ${ha(it.em)} (${quando})${it.prime ? " · Exclusivo Prime" : ""}. Preço e estoque podem mudar a qualquer momento.</p>
     <div class="grp">💚 Receba ofertas assim no WhatsApp<a href="${GRUPO}">Entrar</a></div>`;
   $("fundo").classList.add("on"); $("gav").classList.add("on"); $("gav").scrollTop = 0;
   document.body.style.overflow = "hidden";
@@ -394,7 +394,7 @@ async function carrega() {
     const j = await r.json();
     geradoEm = j.gerado_em;
     ITENS = (j.itens || []).filter((it) => it.link && it.titulo && (it.tipo === "cupom" || it.preco)).map((it, i) => ({ ...it, _i: i }));
-    ITENS.forEach((it) => { if (!it.loja) it.loja = /natura.com/.test(it.link) ? "natura" : /amazon./.test(it.link) ? "amazon" : /shopee./.test(it.link) ? "shopee" : /meli.la|mercadolivre/.test(it.link) ? "ml" : /magazinevoce|magalu/.test(it.link) ? "magalu" : null; it.cat = categoria(it); });
+    ITENS.forEach((it) => { const lt = (it.titulo.match(/[A-Za-zÀ-ú]/g) || []).length, up = (it.titulo.match(/[A-ZÀ-Þ]/g) || []).length; it.tituloBom = lt && up / lt > 0.6 ? it.titulo.toLowerCase().replace(/(^|[\s(\-\/])([a-zà-ú])/g, (m, a, b) => a + b.toUpperCase()) : it.titulo; if (!it.loja) it.loja = /natura.com/.test(it.link) ? "natura" : /amazon./.test(it.link) ? "amazon" : /shopee./.test(it.link) ? "shopee" : /meli.la|mercadolivre/.test(it.link) ? "ml" : /magazinevoce|magalu/.test(it.link) ? "magalu" : null; it.cat = categoria(it); });
     $("atual").innerHTML = ITENS.length ? `Atualiza sozinho · última postada <b>${ha(ITENS[0].em)}</b>` : "Sem ofertas agora";
     tudo();
   } catch (e) {

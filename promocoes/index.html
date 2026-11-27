@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Promoções do dia | As Ofertas Maternas</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="As últimas ofertas que postamos nos grupos: fraldas, casa, beleza e tudo pra mãe e o bebê.">
+<meta property="og:title" content="Promoções do dia | As Ofertas Maternas">
+<meta property="og:description" content="As últimas ofertas que postamos nos grupos: fraldas, casa, beleza e tudo pra mãe e o bebê.">
+<meta property="og:image" content="../assets/logo.jpg">
+<meta name="theme-color" content="#24493E">
+<link rel="icon" href="../assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://qkherjtsvakmpkxebuwy.supabase.co" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#D3E7DB; --bg2:#C7E0D2; --bg3:#E9CFDC;
+    --card:#FFFFFF; --soft:#FDFBF7; --ink:#24302B; --ink-soft:#66756D; --line:#E3ECE6;
+    --pine:#24493E; --pine2:#2F6B57; --rose:#B4517F; --rose-soft:#F7E3EC; --gold:#D9A94E; --zap:#1FA855;
+  }
+  :root{color-scheme:light}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'Poppins',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.4;
+    background:linear-gradient(170deg,var(--bg1) 0%,var(--bg2) 50%,var(--bg3) 100%);background-attachment:fixed;min-height:100vh;
+    -webkit-tap-highlight-color:transparent}
+  button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+  a{color:inherit;text-decoration:none}
+  img{display:block}
+
+  /* barra do grupo, fixa no topo */
+  .topo{position:sticky;top:0;z-index:30;background:var(--pine);color:#fff;
+    padding:9px max(14px,env(safe-area-inset-right)) 9px max(14px,env(safe-area-inset-left))}
+  .topo .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px}
+  .topo .vt{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);flex:none}
+  .topo .vt svg{width:16px;height:16px}
+  .topo p{flex:1;font-size:.82rem;font-weight:500;line-height:1.2}
+  .topo .zap{display:flex;align-items:center;gap:6px;background:var(--zap);border-radius:999px;padding:8px 13px;font-weight:600;font-size:.82rem;white-space:nowrap;
+    box-shadow:0 6px 14px -6px rgba(0,0,0,.4)}
+  .topo .zap svg{width:17px;height:17px}
+
+  .wrap{max-width:760px;margin:0 auto;padding:18px max(14px,env(safe-area-inset-right)) 40px max(14px,env(safe-area-inset-left))}
+
+  .cab{display:flex;align-items:center;gap:13px;margin:4px 2px 16px}
+  .cab img{width:58px;height:58px;border-radius:50%;border:3px solid #fff;box-shadow:0 10px 20px -12px rgba(36,73,62,.6);object-fit:cover;flex:none}
+  .cab h1{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;line-height:1.05;color:var(--pine)}
+  .cab h1 em{font-style:normal;color:var(--rose)}
+  .cab .sub{font-size:.8rem;color:var(--ink-soft);margin-top:3px}
+  .cab .sub b{color:var(--pine2);font-weight:600}
+  .vivo{display:inline-block;width:7px;height:7px;border-radius:50%;background:#2DBE6C;margin-right:5px;vertical-align:1px;box-shadow:0 0 0 3px rgba(45,190,108,.2)}
+
+  /* campanhas */
+  .camps{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -14px;padding:2px 14px 4px;scroll-snap-type:x proximity;overscroll-behavior-x:contain}
+  .camps::-webkit-scrollbar,.lojas::-webkit-scrollbar,.cats::-webkit-scrollbar{display:none}
+  .camp{flex:none;scroll-snap-align:start;display:flex;align-items:center;gap:7px;padding:9px 14px 9px 10px;border-radius:16px;background:rgba(255,255,255,.75);
+    border:1.5px solid rgba(255,255,255,.9);font-weight:600;font-size:.86rem;color:var(--pine);transition:transform .15s ease,background .2s}
+  .camp:active{transform:scale(.97)}
+  .camp .ic{width:28px;height:28px;border-radius:10px;display:grid;place-items:center;font-size:1rem;background:var(--soft)}
+  .camp .n{font-size:.7rem;font-weight:500;color:var(--ink-soft);margin-left:1px}
+  .camp[aria-pressed="true"]{background:var(--pine);color:#fff;border-color:var(--pine);box-shadow:0 10px 18px -12px rgba(36,73,62,.9)}
+  .camp[aria-pressed="true"] .ic{background:rgba(255,255,255,.16)}
+  .camp[aria-pressed="true"] .n{color:rgba(255,255,255,.75)}
+
+  .bloco{background:rgba(253,251,247,.86);border:1px solid rgba(255,255,255,.9);border-radius:20px;padding:12px 0 10px;margin-top:12px;
+    box-shadow:0 14px 28px -22px rgba(20,50,38,.6)}
+  .bloco h2{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pine2);font-weight:600;padding:0 14px 8px}
+  .lojas,.cats{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:0 14px;overscroll-behavior-x:contain}
+  .loja{flex:none;display:flex;align-items:center;gap:8px;height:44px;padding:0 13px;border-radius:13px;background:#fff;border:1.5px solid var(--line);font-size:.8rem;font-weight:500}
+  .loja img{height:20px;width:auto;max-width:74px;object-fit:contain}
+  .loja .t{white-space:nowrap}
+  .loja[aria-pressed="true"],.cat[aria-pressed="true"]{border-color:var(--rose);background:var(--rose-soft);color:#8E3561}
+  .cats{margin-top:10px}
+  .cat{flex:none;height:34px;padding:0 13px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-size:.78rem;font-weight:500;white-space:nowrap}
+  .busca{margin:10px 14px 2px;position:relative}
+  .busca input{width:100%;height:42px;border-radius:12px;border:1.5px solid var(--line);background:#fff;padding:0 12px 0 38px;font:inherit;font-size:16px;color:var(--ink);outline:none}
+  .busca input:focus{border-color:var(--pine2)}
+  .busca svg{position:absolute;left:12px;top:12px;width:18px;height:18px;color:var(--ink-soft)}
+
+  .tit{display:flex;align-items:baseline;justify-content:space-between;margin:20px 2px 10px}
+  .tit h3{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--pine);font-weight:700}
+  .tit span{font-size:.76rem;color:var(--ink-soft)}
+
+  /* grade */
+  .grade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  @media (min-width:640px){.grade{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .card{background:var(--card);border-radius:18px;overflow:hidden;text-align:left;display:flex;flex-direction:column;
+    box-shadow:0 10px 22px -18px rgba(20,50,38,.7);border:1px solid rgba(255,255,255,.9);transition:transform .15s ease}
+  .card:active{transform:scale(.98)}
+  .card .foto{position:relative;aspect-ratio:1/1;background:#fff;display:grid;place-items:center;padding:10px}
+  .card .foto img{width:100%;height:100%;object-fit:contain}
+  .card .off{position:absolute;top:9px;left:9px;background:var(--rose);color:#fff;font-weight:700;font-size:.74rem;padding:3px 8px;border-radius:8px}
+  .card .lg{position:absolute;bottom:8px;right:8px;width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;
+    box-shadow:0 3px 10px -3px rgba(0,0,0,.25);padding:6px}
+  .card .lg img{max-width:100%;max-height:100%;object-fit:contain}
+  .card .cp{position:absolute;top:9px;right:9px;background:var(--gold);color:#3B2A08;font-weight:700;font-size:.66rem;padding:3px 7px;border-radius:7px;letter-spacing:.03em}
+  .card .txt{padding:9px 11px 12px;display:flex;flex-direction:column;gap:3px;flex:1;border-top:1px solid #F1F4F2}
+  .card .q{font-size:.68rem;color:var(--ink-soft)}
+  .card .nm{font-size:.84rem;font-weight:500;line-height:1.28;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.56em}
+  .card .cod{align-self:flex-start;margin-top:3px;font-size:.68rem;font-weight:600;color:#8E3561;background:var(--rose-soft);border:1px dashed #E2A9C3;border-radius:6px;padding:2px 6px;
+    max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .card .pr{margin-top:auto;padding-top:4px}
+  .card .de{font-size:.72rem;color:var(--ink-soft);text-decoration:line-through}
+  .card .por{font-size:1.12rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+  .card .regra{font-size:.8rem;font-weight:600;color:var(--pine2);line-height:1.25}
+
+  .cta{grid-column:1/-1;background:linear-gradient(140deg,var(--pine),#2F6B57);color:#fff;border-radius:20px;padding:18px 16px;text-align:center}
+  .cta b{display:block;font-family:'Fraunces',serif;font-size:1.25rem;margin-bottom:4px}
+  .cta p{font-size:.84rem;opacity:.9}
+  .cta .bts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+  .cta a{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:10px 15px;font-weight:600;font-size:.84rem;background:#fff;color:var(--pine)}
+  .cta a.z{background:var(--zap);color:#fff}
+
+  .vazio{grid-column:1/-1;text-align:center;padding:30px 16px;color:var(--ink-soft);font-size:.9rem;background:rgba(255,255,255,.6);border-radius:18px}
+  .mais{display:block;margin:16px auto 0;padding:12px 22px;border-radius:999px;background:#fff;color:var(--pine);font-weight:600;font-size:.88rem;box-shadow:0 8px 18px -14px rgba(0,0,0,.5)}
+  .sk{background:linear-gradient(90deg,#eef3f0 25%,#f8faf9 50%,#eef3f0 75%);background-size:200% 100%;animation:sk 1.2s infinite;border-radius:18px;aspect-ratio:3/4.6}
+  @keyframes sk{to{background-position:-200% 0}}
+  .rod{text-align:center;font-size:.72rem;color:var(--ink-soft);margin-top:26px;line-height:1.6}
+  .rod a{color:var(--pine2);font-weight:600}
+
+  /* gaveta do produto */
+  .fundo{position:fixed;inset:0;background:rgba(15,30,24,.5);z-index:40;opacity:0;pointer-events:none;transition:opacity .25s ease}
+  .fundo.on{opacity:1;pointer-events:auto}
+  .gav{position:fixed;left:0;right:0;bottom:0;z-index:41;background:#fff;border-radius:24px 24px 0 0;max-height:92vh;max-height:92dvh;overflow-y:auto;overscroll-behavior:contain;
+    transform:translateY(105%);transition:transform .32s cubic-bezier(.32,.72,0,1);padding:8px 18px calc(18px + env(safe-area-inset-bottom))}
+  .gav.on{transform:none}
+  @media (min-width:640px){.gav{left:50%;right:auto;width:520px;margin-left:-260px}}
+  .gav .puxa{width:42px;height:5px;border-radius:9px;background:#D8E0DB;margin:4px auto 10px}
+  .gav .fecha{position:absolute;right:12px;top:12px;width:34px;height:34px;border-radius:50%;background:#F1F4F2;display:grid;place-items:center}
+  .gav .lj{display:flex;align-items:center;gap:10px;font-size:.78rem;color:var(--ink-soft)}
+  .gav .lj img{height:22px;width:auto;max-width:80px}
+  .gav .lj b{display:block;color:var(--ink);font-size:.86rem}
+  .gav .ft{aspect-ratio:1/1;max-height:300px;margin:12px auto;display:grid;place-items:center;width:100%}
+  .gav .ft img{max-width:100%;max-height:300px;object-fit:contain}
+  .gav .qd{font-size:.74rem;color:var(--ink-soft)}
+  .gav h4{font-size:1.02rem;font-weight:600;line-height:1.32;margin:4px 0 10px}
+  .gav .de{font-size:.86rem;color:var(--ink-soft);text-decoration:line-through}
+  .gav .por{font-size:1.9rem;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+  .gav .eco{font-size:.8rem;font-weight:600;color:#1C8A4C;margin-top:2px}
+  .gav .uni{font-size:.8rem;color:var(--ink-soft)}
+  .gav .cupom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;border:1.5px dashed #E2A9C3;background:var(--rose-soft);border-radius:14px;padding:10px 12px}
+  .gav .cupom small{display:block;font-size:.7rem;color:#8E3561}
+  .gav .cupom b{font-size:1.02rem;letter-spacing:.04em;color:#6E2148;word-break:break-all}
+  .gav .cupom button{flex:none;background:var(--rose);color:#fff;border-radius:10px;padding:8px 12px;font-weight:600;font-size:.8rem}
+  .gav .pegar{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;background:var(--pine);color:#fff;border-radius:16px;height:54px;font-weight:600;font-size:1rem;
+    box-shadow:0 12px 22px -14px rgba(36,73,62,.9)}
+  .gav .pegar:active{transform:scale(.98)}
+  .gav .aviso{text-align:center;font-size:.7rem;color:var(--ink-soft);margin-top:10px}
+  .gav .grp{margin-top:14px;background:#F2F8F4;border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:10px;font-size:.8rem}
+  .gav .grp a{margin-left:auto;background:var(--zap);color:#fff;border-radius:999px;padding:8px 13px;font-weight:600;white-space:nowrap}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  @media (hover:hover){.card:hover{transform:translateY(-2px)}}
+</style>
+</head>
+<body>
+
+<div class="topo"><div class="in">
+  <a class="vt" href="../" aria-label="Voltar pro link da bio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></a>
+  <p>Receba as promoções no seu WhatsApp</p>
+  <a class="zap" href="https://asofertasmaternas.com.br/?utm_source=instagram&utm_campaign=organico&utm_content=promocoes-do-dia"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.7.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>Entrar no grupo</a>
+</div></div>
+
+<main class="wrap">
+  <header class="cab">
+    <img src="../assets/logo.jpg" alt="As Ofertas Maternas" width="58" height="58">
+    <div>
+      <h1>Promoções <em>do dia</em></h1>
+      <p class="sub"><span class="vivo"></span><span id="atual">Carregando as últimas ofertas…</span></p>
+    </div>
+  </header>
+
+  <nav class="camps" id="camps" aria-label="Campanhas"></nav>
+
+  <section class="bloco">
+    <h2>Filtrar por loja</h2>
+    <div class="lojas" id="lojas"></div>
+    <div class="cats" id="cats" aria-label="Categorias"></div>
+    <label class="busca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Buscar: fralda, air fryer, perfume…" autocomplete="off" enterkeyhint="search"></label>
+  </section>
+
+  <div class="tit"><h3 id="titulo">Últimas postadas</h3><span id="conta"></span></div>
+  <div class="grade" id="grade">
+    <div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div>
+  </div>
+  <button class="mais" id="mais" hidden>Ver mais ofertas</button>
+
+  <p class="rod">Ofertas que postamos nos grupos das Ofertas Maternas.<br>Preço e estoque podem mudar a qualquer momento: confira na loja.<br><a href="../">Voltar pro link da bio</a></p>
+</main>
+
+<div class="fundo" id="fundo"></div>
+<div class="gav" id="gav" role="dialog" aria-modal="true" aria-label="Oferta"></div>
+
+<script>
+const SB = "https://qkherjtsvakmpkxebuwy.supabase.co";
+const ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFraGVyanRzdmFrbXBreGVidXd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5Mjk0MjIsImV4cCI6MjA5MTUwNTQyMn0.8AHXoj74DeQ00ubcJ2en7TxX77K3KD5dHWdAJ8LBQBc"; // chave pública (anon): só consegue chamar a função vitrine_maternas, as tabelas ficam fechadas
+const GRUPO = "https://asofertasmaternas.com.br/?utm_source=instagram&utm_campaign=organico&utm_content=promocoes-do-dia";
+const CANAL = "https://whatsapp.com/channel/0029VbBwrMJCnA7ln7FrBX03";
+const TELEGRAM = "https://t.me/asofertasmaternas";
+
+const CAMPS = [
+  { k: "todas",   nome: "Todas",          ic: "✨" },
+  { k: "gerais",  nome: "Ofertas gerais", ic: "🛍️" },
+  { k: "fraldas", nome: "Fraldas",        ic: "🚼" },
+  { k: "lar",     nome: "Do lar",         ic: "🏠" },
+  { k: "beleza",  nome: "Beleza",         ic: "💄" },
+  { k: "cupons",  nome: "Cupons",         ic: "🎟️" },
+  { k: "enxoval", nome: "Enxoval",        ic: "🧸" },
+];
+const LOJAS = {
+  amazon: { nome: "Amazon", logo: "../assets/lojas/amazon.svg" },
+  ml:     { nome: "Mercado Livre", logo: "../assets/lojas/ml.svg" },
+  shopee: { nome: "Shopee", logo: "../assets/lojas/shopee.svg" },
+  magalu: { nome: "Magalu", logo: "../assets/lojas/magalu.svg" },
+  natura: { nome: "Natura", logo: "../assets/lojas/natura.png" },
+};
+
+// categorias por palavra (sem acento, começo de palavra). A primeira que bater ganha.
+const BEBE = [
+  ["Fraldas", ["fralda"]],
+  ["Lenços e higiene", ["lenco", "lencos", "umedecid", "algodao", "hastes", "shampoo", "sabonete", "pomada", "assadura", "hipoglos", "bepantol", "desitin", "condicionador", "escova de dente", "creme dental", "cotonete"]],
+  ["Amamentação", ["amamenta", "bomba tira", "bomba de leite", "extrator", "absorvente de seio", "absorventes de seio", "sutia", "lanolina"]],
+  ["Alimentação", ["mamadeira", "chupeta", "bico", "leite", "formula", "papinha", "aptamil", "nan ", "milnutri", "cadeira de alimenta", "cadeira de refei", "cadeirao", "babador", "prato", "copo", "pratinho", "talher", "garrafinha"]],
+  ["Passeio", ["carrinho", "bebe conforto", "cadeirinha", "cadeira para auto", "assento", "canguru", "sling", "bolsa maternidade", "mochila maternidade", "bolsa de maternidade"]],
+  ["Quarto e sono", ["berco", "baba eletronica", "monitor de bebe", "saco de dormir", "luminaria", "mobile", "colchao", "mosquiteiro", "ninho", "comoda", "trocador", "cercadinho"]],
+  ["Banho", ["banheira", "toalha", "roupao", "termometro de banho", "assento de banho"]],
+  ["Saúde", ["termometro", "aspirador nasal", "nebuliz", "inalador", "vitamina", "soro", "sugador"]],
+  ["Roupinhas", ["body", "bodies", "macacao", "roupa", "roupinha", "conjunto", "pijama", "meia", "sapato", "tenis", "manta", "cueiro", "touca", "luva"]],
+  ["Brinquedos", ["brinquedo", "tapete de atividade", "tapete de ativ", "mordedor", "chocalho", "livro", "pelucia", "andador", "piano", "cubo"]],
+  ["Natura e beleza", ["natura", "mamae e bebe", "perfume", "colonia", "hidratante", "boticario"]],
+];
+const CASA = [
+  ["Eletrodomésticos", ["geladeira", "refrigerador", "freezer", "fogao", "cooktop", "maquina de lavar", "lavadora", "lava e seca", "lava louca", "ar condicionado", "micro ondas", "microondas"]],
+  ["Eletroportáteis", ["air fryer", "airfryer", "fritadeira", "liquidificador", "batedeira", "cafeteira", "mixer", "sanduicheira", "chaleira", "panela eletrica", "panela de pressao eletrica", "processador", "espremedor", "forno", "torradeira", "grill", "aspirador", "ferro de passar", "vaporizador", "ventilador", "climatizador", "robo aspirador"]],
+  ["Cozinha", ["panela", "frigideira", "faca", "pote", "potes", "talher", "prato", "copo", "garrafa", "assadeira", "forma", "tabua", "escorredor", "jarra", "xicara", "caneca", "tramontina", "marinex", "oikos", "utensilio", "garrafa termica"]],
+  ["Limpeza", ["sabao", "detergente", "amaciante", "desinfetante", "limpador", "alvejante", "omo", "downy", "comfort", "ype", "veja", "vanish", "ariel", "vassoura", "mop", "rodo", "esponja", "papel higienico", "papel toalha", "lava roupas", "multiuso", "pano"]],
+  ["Cama e banho", ["toalha", "lencol", "edredom", "travesseiro", "cobertor", "manta", "jogo de cama", "fronha", "colcha", "roupao", "tapete de banheiro", "buddemeyer", "karsten", "santista"]],
+  ["Organização e decoração", ["organizador", "cesto", "caixa organizadora", "prateleira", "tapete", "cortina", "luminaria", "quadro", "vaso", "espelho", "cabide", "sapateira", "nicho", "abajur", "almofada", "decora"]],
+];
+const BELEZA = [
+  ["Cabelo", ["shampoo", "condicionador", "mascara capilar", "oleo capilar", "creme de pentear", "leave in", "finalizador", "tonico capilar", "elseve", "wella", "kerastase", "lola", "pantene", "tresemme", "cabelo", "capilar", "chapinha", "prancha", "secador", "escova secadora", "modelador", "babyliss"]],
+  ["Pele e skincare", ["protetor solar", "serum", "hidratante facial", "creme facial", "skincare", "skin care", "sabonete facial", "gel de limpeza", "vitamina c", "acido", "retinol", "cetaphil", "cerave", "la roche", "principia", "neutrogena", "nivea", "facial", "olheiras", "anti idade", "antissinais"]],
+  ["Perfume e corpo", ["perfume", "colonia", "body splash", "desodorante", "hidratante", "locao", "oleo corporal", "sabonete", "boticario", "floratta", "natura", "egeo", "malbec", "lily", "kaiak", "creme para maos", "corporal"]],
+  ["Maquiagem e unhas", ["base", "batom", "rimel", "mascara de cilios", "corretivo", "blush", "po compacto", "paleta", "sombra", "delineador", "gloss", "maquiagem", "esmalte", "unha", "unhas", "gel ", "manicure", "pincel", "maybelline", "ruby rose", "vult"]],
+  ["Bem-estar", ["creatina", "colageno", "whey", "vitamina", "suplemento", "cafe", "cha ", "multivitaminico", "omega", "proteina", "barra de proteina", "massageador", "escova dental eletrica", "oral b"]],
+  ["Aparelhos", ["depilador", "depilacao", "aparador", "escova eletrica", "balanca", "massageador"]],
+];
+const sem = (s) => (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9 ]+/g, " ");
+const bate = (t, p) => { const w = sem(p).trim(); return w.length <= 3 ? new RegExp("\\b" + w + "\\b").test(t) : new RegExp("\\b" + w).test(t); };
+function categoria(it) {
+  if (it.tipo === "cupom") return "Cupons";
+  const t = " " + sem(it.titulo) + " ";
+  if (it.campanha === "fraldas") {
+    if (!/\bfralda/.test(t)) return /\blenco|umedecid/.test(t) ? "Lenços" : "Outros";
+    const m = t.match(/\b(rn|xxxg|xxg|xg|g|m|p)\b/);
+    return m ? "Tamanho " + m[1].toUpperCase() : "Fraldas";
+  }
+  const lista = it.campanha === "lar" ? CASA : it.campanha === "beleza" ? BELEZA : BEBE;
+  for (const [nome, palavras] of lista) if (palavras.some((p) => bate(t, p))) return nome;
+  return "Outros";
+}
+
+const st = { camp: "todas", loja: null, cat: null, q: "", lim: 24 };
+let ITENS = [];
+let geradoEm = null;
+const $ = (id) => document.getElementById(id);
+const brl = (v) => v == null ? "" : "R$ " + Number(v).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+function ha(iso) {
+  const m = Math.max(0, Math.round((Date.now() - Date.parse(iso)) / 60000));
+  if (m < 1) return "agora";
+  if (m < 60) return "há " + m + " min";
+  const h = Math.round(m / 60);
+  if (h < 24) return "há " + h + "h";
+  const d = Math.round(h / 24);
+  return d === 1 ? "ontem" : "há " + d + " dias";
+}
+function off(it) {
+  if (it.off) return Math.round(it.off);
+  if (it.de && it.preco && it.de > it.preco) return Math.round((1 - it.preco / it.de) * 100);
+  return null;
+}
+
+function filtrados(ignorar) {
+  const q = sem(st.q).trim();
+  let l = ITENS.filter((it) => st.camp === "todas" || it.campanha === st.camp);
+  if (st.camp === "todas") { const vistos = new Set(); l = l.filter((it) => { const k = sem(it.titulo).slice(0, 60) + it.loja; if (vistos.has(k)) return false; vistos.add(k); return true; }); }
+  if (ignorar !== "loja" && st.loja) l = l.filter((it) => it.loja === st.loja);
+  if (ignorar !== "cat" && st.cat) l = l.filter((it) => it.cat === st.cat);
+  if (q) l = l.filter((it) => q.split(/\s+/).every((w) => sem(it.titulo + " " + (it.curto || "")).includes(w)));
+  return l;
+}
+
+function desenhaCamps() {
+  $("camps").innerHTML = CAMPS.map((c) => {
+    const n = c.k === "todas" ? null : ITENS.filter((i) => i.campanha === c.k).length;
+    if (n === 0) return "";
+    return `<button class="camp" data-k="${c.k}" aria-pressed="${st.camp === c.k}"><span class="ic">${c.ic}</span>${c.nome}${n ? `<span class="n">${n}</span>` : ""}</button>`;
+  }).join("");
+}
+function desenhaFiltros() {
+  const porLoja = filtrados("loja");
+  const cont = {}; porLoja.forEach((i) => { if (i.loja) cont[i.loja] = (cont[i.loja] || 0) + 1; });
+  if (st.loja && !cont[st.loja]) st.loja = null;
+  const ordem = Object.keys(LOJAS).filter((k) => cont[k]);
+  $("lojas").innerHTML = `<button class="loja" data-l="" aria-pressed="${!st.loja}"><span class="t">Todas</span></button>` +
+    ordem.map((k) => `<button class="loja" data-l="${k}" aria-pressed="${st.loja === k}"><img src="${LOJAS[k].logo}" alt="${LOJAS[k].nome}"><span class="t">${cont[k]}</span></button>`).join("");
+  const porCat = filtrados("cat");
+  const cc = {}; porCat.forEach((i) => { cc[i.cat] = (cc[i.cat] || 0) + 1; });
+  if (st.cat && !cc[st.cat]) st.cat = null;
+  const cats = Object.keys(cc).sort((a, b) => (a === "Outros") - (b === "Outros") || (a.startsWith("Tamanho") && b.startsWith("Tamanho") ? ordTam(a) - ordTam(b) : cc[b] - cc[a]));
+  $("cats").innerHTML = cats.length > 1 ? `<button class="cat" data-c="" aria-pressed="${!st.cat}">Todas as categorias</button>` +
+    cats.map((c) => `<button class="cat" data-c="${esc(c)}" aria-pressed="${st.cat === c}">${esc(c)} · ${cc[c]}</button>`).join("") : "";
+}
+const TAM = ["RN", "P", "M", "G", "XG", "XXG", "XXXG"];
+const ordTam = (s) => TAM.indexOf(s.replace("Tamanho ", ""));
+
+function cardHtml(it, i) {
+  const lj = LOJAS[it.loja];
+  const o = off(it);
+  const nome = it.titulo;
+  const foto = it.foto ? `<img src="${esc(it.foto)}" alt="" loading="${i < 6 ? "eager" : "lazy"}" decoding="async" referrerpolicy="no-referrer">` : "";
+  if (it.tipo === "cupom") {
+    return `<button class="card" data-i="${it._i}"><div class="foto">${foto}${lj ? `<span class="lg"><img src="${lj.logo}" alt="${lj.nome}"></span>` : ""}<span class="cp">CUPOM</span></div>
+      <div class="txt"><span class="q">${ha(it.em)}</span><span class="nm">${esc(nome)}</span>${it.cupom ? `<span class="cod">${esc(it.cupom)}</span>` : ""}
+      <div class="pr"><span class="regra">${esc((it.regra || "").replace(/^[^\p{L}\p{N}R$]+/u, ""))}</span></div></div></button>`;
+  }
+  return `<button class="card" data-i="${it._i}"><div class="foto">${foto}${o ? `<span class="off">-${o}%</span>` : ""}${lj ? `<span class="lg"><img src="${lj.logo}" alt="${lj.nome}"></span>` : ""}</div>
+    <div class="txt"><span class="q">${ha(it.em)}</span><span class="nm">${esc(nome)}</span>${it.cupom ? `<span class="cod">🏷️ ${esc(it.cupom)}</span>` : ""}
+    <div class="pr">${it.de && it.de > it.preco ? `<div class="de">${brl(it.de)}</div>` : ""}<div class="por">${brl(it.preco)}</div></div></div></button>`;
+}
+const CTA = `<div class="cta"><b>Já está no nosso grupo?</b><p>É grátis! Receba no WhatsApp as melhores ofertas assim que a gente encontra.</p>
+  <div class="bts"><a class="z" href="${GRUPO}">Entrar no grupo</a><a href="${CANAL}" target="_blank" rel="noopener">Canal</a><a href="${TELEGRAM}" target="_blank" rel="noopener">Telegram</a></div></div>`;
+
+function desenhaGrade() {
+  const l = filtrados();
+  const c = CAMPS.find((x) => x.k === st.camp);
+  $("titulo").textContent = st.camp === "todas" ? "Últimas postadas" : c.nome;
+  $("conta").textContent = l.length ? l.length + (l.length === 1 ? " oferta" : " ofertas") : "";
+  if (!l.length) { $("grade").innerHTML = `<div class="vazio">Nada por aqui com esse filtro agora.<br>Tente outra loja ou categoria.</div>`; $("mais").hidden = true; return; }
+  const vis = l.slice(0, st.lim);
+  let h = "";
+  vis.forEach((it, i) => { h += cardHtml(it, i); if (i === 9) h += CTA; });
+  if (vis.length <= 9) h += CTA;
+  $("grade").innerHTML = h;
+  $("mais").hidden = l.length <= st.lim;
+}
+function tudo() { desenhaCamps(); desenhaFiltros(); desenhaGrade(); }
+
+function abre(it) {
+  const lj = LOJAS[it.loja];
+  const o = off(it);
+  const d = new Date(it.em);
+  const quando = d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" }) + " às " + d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+  const eco = it.de && it.preco && it.de > it.preco ? `Economia de ${brl(it.de - it.preco)}${o ? ` (${o}% OFF)` : ""}` : "";
+  $("gav").innerHTML = `<div class="puxa"></div><button class="fecha" aria-label="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="lj">${lj ? `<img src="${lj.logo}" alt="">` : ""}<div>${it.tipo === "cupom" ? "Cupom da loja" : "Promoção da loja"}<b>${lj ? lj.nome : "Loja parceira"}</b></div></div>
+    ${it.foto ? `<div class="ft"><img src="${esc(it.foto)}" alt="" referrerpolicy="no-referrer"></div>` : ""}
+    <div class="qd">Postado ${ha(it.em)} · ${quando}${it.prime ? " · Exclusivo Prime" : ""}</div>
+    <h4>${esc(it.titulo)}</h4>
+    ${it.tipo === "cupom" ? `<div class="eco" style="font-size:1rem">${esc((it.regra || "").replace(/^[^\p{L}\p{N}R$]+/u, ""))}</div>` :
+      `${it.de && it.de > it.preco ? `<div class="de">${brl(it.de)}</div>` : ""}<div class="por">${brl(it.preco)}</div>${eco ? `<div class="eco">${eco}</div>` : ""}${it.unidade ? `<div class="uni">${esc(it.unidade)} por unidade</div>` : ""}`}
+    ${it.cupom ? `<div class="cupom"><div><small>Use o cupom</small><b>${esc(it.cupom)}</b></div><button data-copia="${esc(it.cupom)}">Copiar</button></div>` : ""}
+    <a class="pegar" href="${esc(it.link)}" target="_blank" rel="noopener sponsored">${it.tipo === "cupom" ? "Ir pra loja" : "Pegar promoção"} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+    <p class="aviso">Preço e estoque podem mudar a qualquer momento.</p>
+    <div class="grp">💚 Receba ofertas assim no WhatsApp<a href="${GRUPO}">Entrar</a></div>`;
+  $("fundo").classList.add("on"); $("gav").classList.add("on"); $("gav").scrollTop = 0;
+  document.body.style.overflow = "hidden";
+}
+function fecha() { $("fundo").classList.remove("on"); $("gav").classList.remove("on"); document.body.style.overflow = ""; }
+
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("button,a"); if (!b) return;
+  if (b.dataset.k) { st.camp = b.dataset.k; st.loja = null; st.cat = null; st.lim = 24; tudo(); b.scrollIntoView({ inline: "nearest", block: "nearest", behavior: "smooth" }); return; }
+  if (b.dataset.l !== undefined && b.classList.contains("loja")) { st.loja = b.dataset.l || null; st.lim = 24; desenhaFiltros(); desenhaGrade(); return; }
+  if (b.dataset.c !== undefined && b.classList.contains("cat")) { st.cat = b.dataset.c || null; st.lim = 24; desenhaFiltros(); desenhaGrade(); return; }
+  if (b.dataset.i !== undefined) { abre(ITENS[+b.dataset.i]); return; }
+  if (b.classList.contains("fecha")) { fecha(); return; }
+  if (b.dataset.copia) { navigator.clipboard?.writeText(b.dataset.copia).then(() => { b.textContent = "Copiado!"; setTimeout(() => (b.textContent = "Copiar"), 1800); }).catch(() => {}); return; }
+  if (b.id === "mais") { st.lim += 24; desenhaGrade(); }
+});
+$("fundo").addEventListener("click", fecha);
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") fecha(); });
+let tq; $("q").addEventListener("input", (e) => { clearTimeout(tq); tq = setTimeout(() => { st.q = e.target.value; st.lim = 24; desenhaFiltros(); desenhaGrade(); }, 180); });
+
+async function carrega() {
+  try {
+    const r = await fetch(SB + "/rest/v1/rpc/vitrine_maternas", {
+      method: "POST", headers: { apikey: ANON, Authorization: "Bearer " + ANON, "Content-Type": "application/json" }, body: JSON.stringify({ p_dias: 4 }),
+    });
+    if (!r.ok) throw new Error(r.status);
+    const j = await r.json();
+    geradoEm = j.gerado_em;
+    ITENS = (j.itens || []).filter((it) => it.link && it.titulo && (it.tipo === "cupom" || it.preco)).map((it, i) => ({ ...it, _i: i }));
+    ITENS.forEach((it) => (it.cat = categoria(it)));
+    $("atual").innerHTML = ITENS.length ? `Atualiza sozinho · última postada <b>${ha(ITENS[0].em)}</b>` : "Sem ofertas agora";
+    tudo();
+  } catch (e) {
+    $("atual").textContent = "Não consegui carregar agora";
+    $("grade").innerHTML = `<div class="vazio">Não consegui carregar as ofertas agora.<br><a href="${GRUPO}" style="color:var(--pine2);font-weight:600">Veja tudo no nosso grupo</a></div>`;
+  }
+}
+carrega();
+setInterval(() => { if (!document.hidden && !$("gav").classList.contains("on")) carrega(); }, 5 * 60e3);
+</script>
+</body>
+</html>

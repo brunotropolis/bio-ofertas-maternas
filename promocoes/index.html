@@ -373,7 +373,7 @@ function fecha() { $("fundo").classList.remove("on"); $("gav").classList.remove(
 
 document.addEventListener("click", (e) => {
   const b = e.target.closest("button,a"); if (!b) return;
-  if (b.dataset.k) { st.camp = b.dataset.k; st.loja = null; st.cat = null; st.lim = 24; tudo(); b.scrollIntoView({ inline: "nearest", block: "nearest", behavior: "smooth" }); return; }
+  if (b.dataset.k) { st.camp = b.dataset.k; st.loja = null; st.cat = null; st.lim = 24; tudo(); document.querySelector(`.camp[data-k="${st.camp}"]`)?.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" }); return; }
   if (b.dataset.l !== undefined && b.classList.contains("loja")) { st.loja = b.dataset.l || null; st.lim = 24; desenhaFiltros(); desenhaGrade(); return; }
   if (b.dataset.c !== undefined && b.classList.contains("cat")) { st.cat = b.dataset.c || null; st.lim = 24; desenhaFiltros(); desenhaGrade(); return; }
   if (b.dataset.i !== undefined) { abre(ITENS[+b.dataset.i]); return; }
